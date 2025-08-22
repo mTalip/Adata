@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Metadata Collector MVP",
+  "version": "0.2",
+  "description": "Собирает точные метаданные видео и отправляет их на ваш сервер",
+  "permissions": [],
+  "host_permissions": [
+    "https://*.youtube.com/*",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch?*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ]
+}
